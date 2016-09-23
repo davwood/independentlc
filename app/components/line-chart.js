@@ -12,15 +12,13 @@ export default Ember.Component.extend({
   //   x((d, i) => x(i)).
   //   y(d => y(d.baseline)),
 
-  baseData: [1000, 900, 800, 700, 600, 500, 400, 300, 200, 100, 0],
-
   didInsertElement() {
      this.plot = select(this.element.querySelector('svg'));
    },
 
   didRender() {
     // NOTE: Do things with the DOM after it has rendered.
-    const data = this.get('baseData');
+    const data = this.get('data');
     const width = this.get('fullWidth') - this.get('margin')['top'] - this.get('margin')['right'];
     const height = this.get('fullHeight') - this.get('margin')['top'] - this.get('margin')['bottom'];
 

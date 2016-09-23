@@ -1,2 +1,18 @@
-{{component 'line-chart'}}
-{{outlet}}
+<div class="form-horizontal form-group form-group-lg row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    <label>Amount</label>
+    {{input type="amount" value=amount class="form-control" placeholder=200000 autofocus="autofocus"}}
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    <label>Rate</label>
+    {{input type="rate" value=rate class="form-control" placeholder=3 autofocus="autofocus"}}
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    <label>Years</label>
+    {{input type="years" value=years class="form-control" placeholder=30 autofocus="autofocus"}}
+  </div>
+</div>
+
+
+
+{{component 'line-chart' data=data}}
