@@ -22,7 +22,6 @@ export default Ember.Component.extend({
 
   didInsertElement() {
      this.plot = select(this.element.querySelector('svg'));
-
      const data = this.get('data');
 
      x.domain([0, data.length - 1]);
@@ -36,11 +35,10 @@ export default Ember.Component.extend({
      svg.append("g")
        .attr("class", "axis axis--x")
        .attr("transform", "translate(0," + height + ")")
-       .call(axisBottom().scale(x).ticks(Math.min(data.length, 30)));
+      //  .call(axisBottom().scale(x).ticks(Math.min(data.length, 30)));
 
      svg.append("g")
          .attr("class", "axis axis--y")
-         .call(axisLeft().scale(y))
        .append("text")
          .attr("class", "axis-title")
          .attr("transform", "rotate(-90)")
@@ -50,17 +48,24 @@ export default Ember.Component.extend({
          .text("Price ($)");
 
      svg.append("path")
-       .datum(data)
+       .datum(this.get('data'))
        .attr("class", "line")
        .attr("d", lineGenerator);
-   },
 
+    this.drawAxis();
+  },
   didRender() {
-    // NOTE: Do things with the DOM after it has rendered.
-
+  },
+  drawAxis() {
+    select(".axis--x").call(axisBottom().scale(x).ticks(Math.min(this.get('data').length, 30)));
+    select(".axis--y").call(axisLeft().scale(y));
   },
   didUpdateAttrs() {
     const data = this.get('data');
-    select(".line").transition().duration(750).attr("d", lineGenerator(data));
+
+    select(".line").transition().duration(750).attr("d", lineGenerator(data)));
+    x.domain([0, data.length - 1]);
+    y.domain([data[0], 0]);
+    this.drawAxis();
   }
 });
