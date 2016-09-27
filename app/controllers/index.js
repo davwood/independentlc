@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
     const monthlyRatePct = this.get('rate') / 1200;
 
     let balance = this.get('amount');
-    let balances = [];
+    let balances = [balance];
     let partial;
 
     for (let year = 0; year < this.get('years'); year++) {

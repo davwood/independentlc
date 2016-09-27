@@ -34,8 +34,7 @@ export default Ember.Component.extend({
 
      svg.append("g")
        .attr("class", "axis axis--x")
-       .attr("transform", "translate(0," + height + ")")
-      //  .call(axisBottom().scale(x).ticks(Math.min(data.length, 30)));
+       .attr("transform", "translate(0," + height + ")");
 
      svg.append("g")
          .attr("class", "axis axis--y")
@@ -61,11 +60,11 @@ export default Ember.Component.extend({
     select(".axis--y").call(axisLeft().scale(y));
   },
   didUpdateAttrs() {
-    const data = this.get('data');
-
-    select(".line").transition().duration(750).attr("d", lineGenerator(data)));
+    let data = this.get('data');
     x.domain([0, data.length - 1]);
     y.domain([data[0], 0]);
+
+    select(".line").transition().duration(750).attr("d", lineGenerator(data));
     this.drawAxis();
   }
 });
