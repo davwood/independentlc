@@ -6,7 +6,7 @@ import { scaleLinear } from 'd3-scale';
 import { transition } from 'd3-transition';
 
 const margin = {top: 20, right: 20, bottom: 30, left: 50};
-const fullWidth = 800;
+const fullWidth = window.innerWidth;
 const fullHeight = 300;
 const width = fullWidth - margin.left - margin.right;
 const height = fullHeight - margin.top - margin.bottom;
@@ -64,7 +64,7 @@ export default Ember.Component.extend({
     x.domain([0, data.length - 1]);
     y.domain([data[0], 0]);
 
-    select(".line").transition().duration(750).attr("d", lineGenerator(data));
+    select(".line").transition().duration(700).attr("d", lineGenerator(data));
     this.drawAxis();
   }
 });
