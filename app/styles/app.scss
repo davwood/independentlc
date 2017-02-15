@@ -1,22 +1,86 @@
 @import "bootstrap";
 
-.axis {
-  font: 10px sans-serif;
+body {
+  overflow: hidden;
+  font: 12px "Helvetica Neue";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: RGBA(186, 184, 175, 1);
+  font-weight: 300;
+}
+
+.form-horizontal {
+  position: absolute;
+  width: 100%;
+  left: 30px;
+  top: 30px;
 }
 
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: RGBA(186, 184, 175, 0);
   shape-rendering: crispEdges;
 }
 
-.axis--x path {
-  display: none;
+.axis .tick text {
+  fill: RGBA(186, 184, 175, 0.75);
+}
+
+.axis .tick {
+  fill: none;
+  stroke: RGBA(186, 184, 175, 0.75);
+  shape-rendering: crispEdges;
 }
 
 .line {
   fill: none;
   stroke: steelblue;
   stroke-width: 1.5px;
+}
+
+// chart spacing
+#chart {
+  margin-top: 300px;
+}
+
+/*
+Basic input element using psuedo classes
+*/
+
+input:focus {
+  outline: 0;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.margintop {
+  margin-top: 15px;
+}
+/* Question */
+
+input.data {
+  font-size: 24px;
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid RGBA(134, 129, 116, 1);
+  width: 30%;
+  margin-left: 15px;
+  color: RGBA(186, 184, 175, 1);
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+input.data:focus {
+  color: RGBA(134, 129, 116, 1);
+  font-size: 36px;
+}
+
+input.data:invalid {
+  box-shadow: none;
 }

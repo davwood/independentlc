@@ -1,16 +1,23 @@
-<div class="form-horizontal form-group form-group-lg row">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-    <label>Amount</label>
-    {{input type="amount" value=amount class="form-control" placeholder=200000 autofocus="autofocus"}}
+
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label for="loanamount" class="col-xs-3 align-right margintop">
+      <span>Loan Amount ($)</span>
+    </label>
+    {{input id="loanamount" type="amount" value=amount class="data"}}
   </div>
-  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-    <label>Rate</label>
-    {{input type="rate" value=rate class="form-control" placeholder=3 autofocus="autofocus"}}
+  <div class="form-group">
+    <label for="rate" class="col-xs-3 align-right margintop">
+      <span>Rate (%)</span>
+    </label>
+    {{input id= "rate" type="rate" value=rate class="data"}}
   </div>
-  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
-    <label>Years</label>
-    {{input type="years" value=years class="form-control" placeholder=30 autofocus="autofocus"}}
+  <div class="form-group">
+    <label for="years" class="col-xs-3 align-right margintop">
+      <span>Years</span>
+    </label>
+    {{input id="years" type="number" value=years class="data" min=1 max=100}}
   </div>
 </div>
-
 {{component 'line-chart' data=data}}

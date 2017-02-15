@@ -2,17 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Independentlc</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     {{content-for "head"}}
-
+    <title>Independent Loan Calculator</title>
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="{{rootURL}}assets/independentlc.css">
-
     {{content-for "head-footer"}}
+    <meta name="description" content="Independent Loan Calculator">
+
+    <!-- Mobile features -->
+    <link rel="apple-touch-startup-image" href="/icon.png">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="apple-touch-icon" type="image/png" href="/icon.png">
+    <link rel="icon" sizes="144x144" href="/icon.png">
+    <link rel="icon" sizes="192x192" href="/icon.png">
+
+    <!-- Add to homescreen for Chrome on Android + Colored Tilebar on Chrome Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#008C70">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Loan Calculator">
+    <link rel="apple-touch-icon-precomposed" href="/icon.png">
+
+    <!-- Tile icon for Windows 10 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/icon.png">
+    <meta name="msapplication-square310x310logo" content="/icon.png">
+    <meta name="msapplication-TileColor" content="#008C70">
+
+    <!--Website Details-->
+    <meta name="author" content="">
+    <meta property="og:url" content="http://independentlc.com"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Loan Calculator"/>
+    <meta property="og:description" content="Loan Calculator"/>
+    <meta property="og:image" content="/icon.png"/>
   </head>
   <body>
     {{content-for "body"}}
